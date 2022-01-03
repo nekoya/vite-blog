@@ -2,6 +2,7 @@ import { Box, createTheme, Paper, ThemeProvider } from "@mui/material";
 import { blue } from "@mui/material/colors";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
+import Example from "./example.mdx";
 
 const theme = createTheme({
     palette: {
@@ -26,9 +27,9 @@ export const App: React.VFC = () => {
                 }}
             >
                 <Header />
-                <Box mx={2} my={10}>
-                    <Paper>
-                        <Box p={2}>fooo</Box>
+                <Box m={2} my={4}>
+                    <Paper sx={{ px: 2, py: 0.5 }}>
+                        <Example />
                     </Paper>
                 </Box>
                 <Footer />
