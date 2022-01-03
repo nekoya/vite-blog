@@ -1,0 +1,12 @@
+{
+    "workbench.colorCustomizations": {
+        "editorError.background": "#ff999930",
+        "editorError.foreground": "#ff0000",
+        "editorWarning.background": "#ffee9930",
+        "editorWarning.foreground": "#ffaa00",
+        "activityBar.background": "#0c365a",
+        "titleBar.activeBackground": "#0f546b",
+        "titleBar.activeForeground": "#FFFCFD"
+    },
+    "cSpell.words": ["vite", "vitejs"]
+}
