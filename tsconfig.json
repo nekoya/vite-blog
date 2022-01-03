@@ -1,20 +1,45 @@
+// https://www.typescriptlang.org/tsconfig
 {
-  "compilerOptions": {
-    "target": "ESNext",
-    "useDefineForClassFields": true,
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "allowJs": false,
-    "skipLibCheck": false,
-    "esModuleInterop": false,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
-  },
-  "include": ["./src"]
+    // File Inclusion
+    "include": ["src/**/*"],
+    "exclude": [".git", "node_modules"],
+    "compilerOptions": {
+        // Project Options
+        "target": "esnext",
+        "module": "esnext",
+        "lib": ["esnext", "dom", "dom.iterable"],
+        "jsx": "react-jsx",
+        "sourceMap": true,
+        "removeComments": false,
+
+        // Strict Checks
+        "strict": true,
+
+        // Module Resolution
+        "allowSyntheticDefaultImports": true,
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "isolatedModules": true,
+
+        // Emit
+        "noEmit": true,
+
+        // Source Maps
+
+        // Linter Checks
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+
+        // Experimental
+
+        // Advanced
+        "allowUnreachableCode": false,
+        "diagnostics": true,
+        "newLine": "LF",
+        "forceConsistentCasingInFileNames": true
+
+        // Command Line
+    }
 }
