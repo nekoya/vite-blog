@@ -1,48 +1,38 @@
-import { useState } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import { Box, createTheme, Paper, ThemeProvider } from "@mui/material";
+import { blue } from "@mui/material/colors";
+import { Footer } from "./components/Footer";
+import { Header } from "./components/Header";
 
-function App() {
-    const [count, setCount] = useState(0);
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: "#0f546b",
+            light: "#ecf0f1",
+        },
+        secondary: {
+            main: blue[50],
+        },
+    },
+});
 
+export const App: React.VFC = () => {
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>Hello Vite + React!</p>
-                <p>
-                    <button
-                        type="button"
-                        onClick={() => setCount((count) => count + 1)}
-                    >
-                        count is: {count}
-                    </button>
-                </p>
-                <p>
-                    Edit <code>App.tsx</code> and save to test HMR updates.
-                </p>
-                <p>
-                    <a
-                        className="App-link"
-                        href="https://reactjs.org"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Learn React
-                    </a>
-                    {" | "}
-                    <a
-                        className="App-link"
-                        href="https://vitejs.dev/guide/features.html"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Vite Docs
-                    </a>
-                </p>
-            </header>
-        </div>
+        <ThemeProvider theme={theme}>
+            <Box
+                sx={{
+                    minHeight: "100vh",
+                    display: "flex",
+                    flexDirection: "column",
+                }}
+            >
+                <Header />
+                <Box mx={2} my={10}>
+                    <Paper>
+                        <Box p={2}>fooo</Box>
+                    </Paper>
+                </Box>
+                <Footer />
+            </Box>
+        </ThemeProvider>
     );
-}
-
-export default App;
+};
