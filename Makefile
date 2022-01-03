@@ -11,3 +11,6 @@ typecheck:
 
 prettier:
 	yarn prettier -l '$(CURDIR)/src/**/*.ts{,x}'
+
+prettier/write:
+	yarn prettier -l --write '$(CURDIR)/src/**/*.ts{,x}'
