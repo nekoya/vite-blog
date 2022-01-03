@@ -1,8 +1,17 @@
-import { Box, createTheme, Paper, ThemeProvider } from "@mui/material";
+import {
+    Box,
+    createTheme,
+    Divider,
+    Link,
+    Paper,
+    ThemeProvider,
+    Typography,
+} from "@mui/material";
 import { blue } from "@mui/material/colors";
+import { useState } from "react";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
-import Example from "./example.mdx";
+import Example, { meta } from "./example.mdx";
 
 const theme = createTheme({
     palette: {
@@ -17,6 +26,7 @@ const theme = createTheme({
 });
 
 export const App: React.VFC = () => {
+    const [open, setOpen] = useState(false);
     return (
         <ThemeProvider theme={theme}>
             <Box
@@ -29,7 +39,23 @@ export const App: React.VFC = () => {
                 <Header />
                 <Box m={2} my={4}>
                     <Paper sx={{ px: 2, py: 0.5 }}>
-                        <Example />
+                        <Typography variant="body2">
+                            {meta.published}
+                        </Typography>
+                        <Typography variant="h6">{meta.title}</Typography>
+                        {open ? (
+                            <Box mt={0.5}>
+                                <Divider />
+                                <Example />
+                                <Link onClick={() => setOpen(false)}>
+                                    &raquo; close
+                                </Link>
+                            </Box>
+                        ) : (
+                            <Link onClick={() => setOpen(true)}>
+                                &raquo; read more
+                            </Link>
+                        )}
                     </Paper>
                 </Box>
                 <Footer />
