@@ -14,3 +14,6 @@ prettier:
 
 prettier/write:
 	yarn prettier -l --write '$(CURDIR)/src/**/*.ts{,x}'
+
+deploy:
+	firebase deploy --only hosting
