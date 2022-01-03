@@ -1,4 +1,4 @@
-test: eslint typecheck
+test: eslint typecheck prettier
 
 eslint:
 	yarn eslint --cache src
@@ -8,3 +8,9 @@ deps:
 
 typecheck:
 	yarn tsc -p .
+
+prettier:
+	yarn prettier -l '$(CURDIR)/src/**/*.ts{,x}'
+
+prettier/write:
+	yarn prettier -l --write '$(CURDIR)/src/**/*.ts{,x}'
