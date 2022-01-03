@@ -6,7 +6,7 @@
     "compilerOptions": {
         // Project Options
         "target": "esnext",
-        "module": "esnext",
+        "module": "es2020",
         "lib": ["esnext", "dom", "dom.iterable"],
         "jsx": "react-jsx",
         "sourceMap": true,
