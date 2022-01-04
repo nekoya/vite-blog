@@ -8,5 +8,6 @@
         "titleBar.activeBackground": "#0f546b",
         "titleBar.activeForeground": "#FFFCFD"
     },
-    "cSpell.words": ["bgcolor", "nekoya", "vite", "vitejs"]
+    "cSpell.words": ["bgcolor", "nekoya", "vite", "vitejs"],
+    "typescript.tsdk": "node_modules/typescript/lib"
 }
