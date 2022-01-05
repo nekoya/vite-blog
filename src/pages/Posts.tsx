@@ -5,7 +5,7 @@ import { PostMeta } from "../Contract";
 const modules = import.meta.globEager("../posts/*.mdx");
 const posts: PostMeta[] = [];
 for (const path in modules) {
-    const match = path.match(/\.\/posts\/(.*)\.mdx$/);
+    const match = path.match(/\/posts\/(.*)\.mdx$/);
     if (match !== null) {
         posts.push({ ...modules[path].meta, path: match[1] });
     }
