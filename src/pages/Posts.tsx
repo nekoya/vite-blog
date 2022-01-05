@@ -1,11 +1,6 @@
 import { Box, Paper, Typography } from "@mui/material";
 import { RouterLink } from "../components/RouterLink";
-
-interface PostMeta {
-    path: string;
-    title: string;
-    published: string;
-}
+import { PostMeta } from "../Contract";
 
 const modules = import.meta.globEager("../posts/*.mdx");
 const posts: PostMeta[] = [];
