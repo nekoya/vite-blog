@@ -2,9 +2,9 @@ import { CssBaseline } from "@mui/material";
 import React from "react";
 import ReactDOM from "react-dom";
 import { App } from "./App";
-import { Posts } from "./Posts";
+import { Posts } from "./pages/Posts";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { NotFound } from "./NotFound";
+import { NotFound } from "./pages/NotFound";
 
 ReactDOM.render(
     <React.StrictMode>

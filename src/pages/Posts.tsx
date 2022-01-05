@@ -1,5 +1,5 @@
 import { Box, Paper, Typography } from "@mui/material";
-import { RouterLink } from "./components/RouterLink";
+import { RouterLink } from "../components/RouterLink";
 
 interface PostMeta {
     path: string;
@@ -7,7 +7,7 @@ interface PostMeta {
     published: string;
 }
 
-const modules = import.meta.globEager("./posts/*.mdx");
+const modules = import.meta.globEager("../posts/*.mdx");
 const posts: PostMeta[] = [];
 for (const path in modules) {
     const match = path.match(/\.\/posts\/(.*)\.mdx$/);
