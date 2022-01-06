@@ -13,6 +13,11 @@ interface Post {
     meta: PostMeta;
 }
 
+const components = {
+    h2: (props: any) => <Typography variant="h2" {...props} />,
+    h3: (props: any) => <Typography variant="h3" {...props} />,
+};
+
 export const PostDetail: React.VFC = () => {
     const [post, setPost] = useState<Post | null | false>(null);
     const { path } = useParams();
@@ -26,8 +31,13 @@ export const PostDetail: React.VFC = () => {
             return;
         }
         modules[x]()
-            .then((v) => setPost({ content: v.default(), meta: v.meta }))
-            .catch(() => setPost(false));
+            .then((v) =>
+                setPost({ content: v.default({ components }), meta: v.meta })
+            )
+            .catch((e) => {
+                console.error(e);
+                setPost(false);
+            });
     }, [path]);
     if (post === null) {
         return null;
