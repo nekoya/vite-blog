@@ -5,6 +5,8 @@ import { useParams } from "react-router-dom";
 import { RouterLink } from "../components/RouterLink";
 import { PostMeta } from "../Contract";
 import { NotFound } from "./NotFound";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { obsidian } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const modules = import.meta.glob("../posts/*.mdx");
 
@@ -16,6 +18,15 @@ interface Post {
 const components = {
     h2: (props: any) => <Typography variant="h2" {...props} />,
     h3: (props: any) => <Typography variant="h3" {...props} />,
+    code: (props: any) => {
+        const { children, ...rest } = props;
+        // omit final line-break to avoid unintended empty line
+        return (
+            <SyntaxHighlighter language="javascript" style={obsidian} {...rest}>
+                {children.slice(0, -1)}
+            </SyntaxHighlighter>
+        );
+    },
 };
 
 export const PostDetail: React.VFC = () => {
