@@ -1,5 +1,12 @@
-import { Box, Paper, Typography } from "@mui/material";
-import { RouterLink } from "../components/RouterLink";
+import { Link as RouterLink } from "react-router-dom";
+import {
+    Box,
+    Card,
+    CardActionArea,
+    CardContent,
+    Link,
+    Typography,
+} from "@mui/material";
 import { PostMeta } from "../Contract";
 
 const modules = import.meta.globEager("../posts/*.mdx");
@@ -24,13 +31,22 @@ export const Posts: React.VFC = () => {
 const PostCard: React.VFC<{ meta: PostMeta }> = ({ meta }) => {
     return (
         <Box m={2}>
-            <Paper sx={{ px: 2, py: 0.5 }}>
-                <Typography variant="body2">{meta.published}</Typography>
-                <Typography variant="h6">{meta.title}</Typography>
-                <RouterLink to={`/posts/${meta.path}`}>
-                    &raquo; read more
-                </RouterLink>
-            </Paper>
+            <Card>
+                <CardActionArea
+                    component={RouterLink}
+                    to={`/posts/${meta.path}`}
+                >
+                    <CardContent sx={{ px: 2, py: 0.5 }}>
+                        <Typography variant="body2">
+                            {meta.published}
+                        </Typography>
+                        <Typography variant="h6">{meta.title}</Typography>
+                        <Link component="span" color="primary">
+                            &raquo; read more
+                        </Link>
+                    </CardContent>
+                </CardActionArea>
+            </Card>
         </Box>
     );
 };
