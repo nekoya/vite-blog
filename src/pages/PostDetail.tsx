@@ -50,6 +50,15 @@ export const PostDetail: React.VFC = () => {
                 setPost(false);
             });
     }, [path]);
+    useEffect(() => {
+        const originalTitle = document.title;
+        if (post !== null && post !== false) {
+            document.title = post.meta.title;
+        }
+        return () => {
+            document.title = originalTitle;
+        };
+    }, [post]);
     if (post === null) {
         return null;
     }
