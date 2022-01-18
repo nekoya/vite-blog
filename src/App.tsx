@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { Box, createTheme, ThemeProvider } from "@mui/material";
+import { Box, Container, createTheme, ThemeProvider } from "@mui/material";
 import { blue } from "@mui/material/colors";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
@@ -27,7 +27,9 @@ export const App: React.VFC = () => {
                 }}
             >
                 <Header />
-                <Outlet />
+                <Container maxWidth="md">
+                    <Outlet />
+                </Container>
                 <Footer />
             </Box>
         </ThemeProvider>
