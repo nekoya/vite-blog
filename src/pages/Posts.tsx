@@ -17,6 +17,7 @@ for (const path in modules) {
         posts.push({ ...modules[path].meta, path: match[1] });
     }
 }
+posts.reverse();
 
 export const Posts: React.VFC = () => {
     return (
