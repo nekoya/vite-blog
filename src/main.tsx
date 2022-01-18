@@ -1,11 +1,11 @@
-import { CssBaseline } from "@mui/material";
 import React from "react";
 import ReactDOM from "react-dom";
-import { App } from "./App";
-import { Posts } from "./pages/Posts";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { CssBaseline } from "@mui/material";
 import { NotFound } from "./pages/NotFound";
+import { Posts } from "./pages/Posts";
 import { PostDetail } from "./pages/PostDetail";
+import { App } from "./App";
 
 ReactDOM.render(
     <React.StrictMode>
