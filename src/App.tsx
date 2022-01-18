@@ -28,7 +28,9 @@ export const App: React.VFC = () => {
             >
                 <Header />
                 <Container maxWidth="md">
-                    <Outlet />
+                    <Box my={4}>
+                        <Outlet />
+                    </Box>
                 </Container>
                 <Footer />
             </Box>

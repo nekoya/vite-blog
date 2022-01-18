@@ -13,7 +13,7 @@ for (const path in modules) {
 
 export const Posts: React.VFC = () => {
     return (
-        <Box my={2}>
+        <Box>
             {posts.map((v) => (
                 <PostCard key={v.path} meta={v} />
             ))}
