@@ -66,7 +66,7 @@ export const PostDetail: React.VFC = () => {
         return <NotFound />;
     }
     return (
-        <Box m={2}>
+        <Box mx={2}>
             <RouterLink to="/">&laquo; back</RouterLink>
             <Paper sx={{ my: 2, px: 2, py: 0.5 }}>
                 <Typography variant="body2">{post.meta.published}</Typography>
