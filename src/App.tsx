@@ -14,6 +14,15 @@ const theme = createTheme({
             main: blue[50],
         },
     },
+    components: {
+        MuiCardContent: {
+            styleOverrides: {
+                root: {
+                    padding: 0,
+                },
+            },
+        },
+    },
 });
 
 export const App: React.VFC = () => {
