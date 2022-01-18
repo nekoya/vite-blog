@@ -1,3 +1,6 @@
+dev:
+	yarn dev
+
 test: eslint typecheck prettier
 
 eslint:
@@ -17,3 +20,7 @@ prettier/write:
 
 deploy:
 	firebase deploy --only hosting
+
+build:
+	yarn build
+	yarn preview
