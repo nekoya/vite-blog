@@ -1,12 +1,12 @@
-import { Paper, Typography } from "@mui/material";
-import { Box } from "@mui/system";
 import { ReactElement, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { obsidian } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { Paper, Typography } from "@mui/material";
+import { Box } from "@mui/system";
 import { RouterLink } from "../components/RouterLink";
 import { PostMeta } from "../Contract";
 import { NotFound } from "./NotFound";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { obsidian } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const modules = import.meta.glob("../posts/*.mdx");
 

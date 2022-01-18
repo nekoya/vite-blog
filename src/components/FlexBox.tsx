@@ -1,4 +1,4 @@
-import { BoxProps, Box } from "@mui/material";
+import { Box, BoxProps } from "@mui/material";
 
 export const FlexBox: React.FC<BoxProps> = (props) => {
     const { children, ...rest } = props;

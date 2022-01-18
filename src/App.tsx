@@ -1,8 +1,8 @@
+import { Outlet } from "react-router-dom";
 import { Box, createTheme, ThemeProvider } from "@mui/material";
 import { blue } from "@mui/material/colors";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
-import { Outlet } from "react-router-dom";
 
 const theme = createTheme({
     palette: {

@@ -1,9 +1,9 @@
+import ArchiveIcon from "@mui/icons-material/Archive";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { Box, Link } from "@mui/material";
-import { IconText } from "./IconText";
-import GitHubIcon from "@mui/icons-material/GitHub";
 import { FlexBox } from "./FlexBox";
-import ArchiveIcon from "@mui/icons-material/Archive";
+import { IconText } from "./IconText";
 
 export const Footer: React.VFC = () => {
     return (
