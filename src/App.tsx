@@ -4,6 +4,8 @@ import { blue } from "@mui/material/colors";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 
+const breakpoints = createTheme().breakpoints;
+
 const theme = createTheme({
     palette: {
         primary: {
@@ -12,6 +14,26 @@ const theme = createTheme({
         },
         secondary: {
             main: blue[50],
+        },
+    },
+    typography: {
+        h1: {
+            fontSize: "1.8rem",
+            fontWeight: 200,
+            [breakpoints.up("md")]: {
+                fontSize: "2.2rem",
+            },
+        },
+        h2: {
+            fontSize: "1.2rem",
+            fontWeight: 600,
+            [breakpoints.up("md")]: {
+                fontSize: "1.6rem",
+            },
+        },
+        h3: {
+            fontSize: "1.6rem",
+            fontWeight: 900,
         },
     },
     components: {

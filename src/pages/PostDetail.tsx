@@ -2,7 +2,7 @@ import { ReactElement, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { obsidian } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import { Paper, Typography } from "@mui/material";
+import { Divider, Paper, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { RouterLink } from "../components/RouterLink";
 import { PostMeta } from "../Contract";
@@ -16,7 +16,11 @@ interface Post {
 }
 
 const components = {
-    h2: (props: any) => <Typography variant="h2" {...props} />,
+    h2: (props: any) => (
+        <Box mt={4}>
+            <Typography variant="h2" {...props} />
+        </Box>
+    ),
     h3: (props: any) => <Typography variant="h3" {...props} />,
     code: (props: any) => {
         const { children, ...rest } = props;
@@ -70,8 +74,11 @@ export const PostDetail: React.VFC = () => {
             <RouterLink to="/">&laquo; back</RouterLink>
             <Paper sx={{ my: 2, px: 2, py: 0.5 }}>
                 <Typography variant="body2">{post.meta.published}</Typography>
-                <Typography variant="h1">{post.meta.title}</Typography>
-                <Box>{post.content}</Box>
+                <Box mt={2} mb={0.5}>
+                    <Typography variant="h1">{post.meta.title}</Typography>
+                </Box>
+                <Divider />
+                <Box mt={2}>{post.content}</Box>
             </Paper>
         </Box>
     );
